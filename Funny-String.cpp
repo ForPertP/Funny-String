@@ -38,3 +38,27 @@ string funnyString(string s)
     return result;    
 }
 
+
+nt main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string q_temp;
+    getline(cin, q_temp);
+
+    int q = stoi(ltrim(rtrim(q_temp)));
+
+    for (int q_itr = 0; q_itr < q; q_itr++) {
+        string s;
+        getline(cin, s);
+
+        string result = funnyString(s);
+
+        fout << result << "\n";
+    }
+
+    fout.close();
+
+    return 0;
+}
+
