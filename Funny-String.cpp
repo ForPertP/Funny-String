@@ -14,6 +14,20 @@ string rtrim(const string &);
 
 string funnyString(string s)
 {
+    int len = s.length();
+    for (int i = 1; i < len; i++)
+    {
+        if (abs(s[i] - s[i - 1]) != abs(s[len - i] - s[len - i - 1]))
+        {
+            return "Not Funny";
+        }
+    }
+    return "Funny";
+}
+
+
+string funnyString2(string s)
+{
     std::string result {"Funny"};
     std::string r = s;
     std::reverse(r.begin(), r.end());
@@ -39,7 +53,7 @@ string funnyString(string s)
 }
 
 
-nt main()
+int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
@@ -62,29 +76,6 @@ nt main()
     return 0;
 }
 
-
-string ltrim(const string &str) {
-    string s(str);
-
-    s.erase(
-        s.begin(),
-        find_if(s.begin(), s.end(), [](unsigned char ch){ return !issapce(ch)})
-    );
-
-    return s;
-}
-
-string rtrim(const string &str) {
-    string s(str);
-
-    s.erase(
-        find_if(s.rbegin(), s.rend(), [](unsigned char ch) { return !isspace(ch) }).base(),
-        s.end()
-    );
-
-    return s;
-}
-
 string ltrim(const string &str)
 {
     string s(str);
@@ -102,5 +93,3 @@ string rtrim(const string &str)
     );
     return s;
 }
-
-
