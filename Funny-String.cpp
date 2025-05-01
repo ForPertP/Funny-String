@@ -15,6 +15,7 @@ string rtrim(const string &);
 string funnyString(string s)
 {
     int len = s.length();
+    
     for (int i = 1; i < len; i++)
     {
         if (abs(s[i] - s[i - 1]) != abs(s[len - i] - s[len - i - 1]))
@@ -22,6 +23,7 @@ string funnyString(string s)
             return "Not Funny";
         }
     }
+    
     return "Funny";
 }
 
