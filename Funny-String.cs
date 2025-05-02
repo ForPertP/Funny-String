@@ -37,4 +37,30 @@ class Result
         return "Funny";
     }    
 
+    public static string funnyString2(string s)
+    {
+        string result = "Funny";
+        string r = new string(s.Reverse().ToArray());
+    
+        bool isFunny = true;
+        int len = s.Length;
+        
+        for (int i = 1; i < len; i++)
+        {
+            if (Math.Abs(s[i] - s[i-1]) != Math.Abs(r[i] - r[i-1]))
+            {
+                isFunny = false;
+                break;
+            }     
+        }
+        
+        if (isFunny == false)
+        {
+            result = "Not " + result;
+        }    
+        
+        return result;    
+    }
+
+    
 }
