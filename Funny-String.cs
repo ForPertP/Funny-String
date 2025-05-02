@@ -22,4 +22,19 @@ class Result
      * The function accepts STRING s as parameter.
      */
 
+    public static string funnyString(string s)
+    {
+        int len = s.Length;
+        
+        for (int i = 1; i < len; i++)
+        {
+            if (Math.Abs(s[i] - s[i - 1]) != Math.Abs(s[len - i] - s[len - i - 1]))
+            {
+                return "Not Funny";
+            }
+        }
+        
+        return "Funny";
+    }    
+
 }
